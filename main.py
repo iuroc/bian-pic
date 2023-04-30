@@ -6,10 +6,7 @@ from config import paths, headers
 def get_list(path: str, page: int = 1, get_all_page: bool = False):
     page_str = f'index_{page}.html' if page > 1 else ''
     url = f'https://pic.netbian.com/{path}/{page_str}'
-    try:
-        r = requests.get(url, headers=headers)
-    except:
-        return get_list(path, page, get_all_page)
+    r = requests.get(url, headers=headers)
     r.encoding = 'gbk'
     data = r.text
     all_page = re_search(r'<span class="slh">.*?>(\d+)<', data)
@@ -72,10 +69,7 @@ def insert_img_info(img_info: dict):
 
 def get_img_url(img_id: str):
     url = f'https://pic.netbian.com/tupian/{img_id}.html'
-    try:
-        r = requests.get(url, headers=headers)
-    except:
-        return get_img_url(img_id)
+    r = requests.get(url, headers=headers)
     r.encoding = 'gbk'
     img_url = re_search(r'id="img"><img src="(.*?)"', r.text)
     return img_url
