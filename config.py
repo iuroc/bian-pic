@@ -1,4 +1,6 @@
 paths = [
+    'new',
+    's/4kyuanchuang',
     '4kdongman',
     '4kfengjing',
     '4kmeinv',
@@ -14,5 +16,5 @@ paths = [
 ]
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.64',
-    'Cookie': 'yjs_js_security_passport=60a9da435de21c2832701e56ff0c218d097c842a_1682878576_js',
+    'Cookie': 'yjs_js_security_passport=7a98cba8c571eef57e35d917dfdaa845acecc092_1682880632_js',
 }

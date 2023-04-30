@@ -118,11 +118,15 @@ if __name__ == '__main__':
     threads = []
     has_finish = 0  # 已完成的任务数量
     img_count = len(all_list)  # 任务总数量
+    img_ids = []
     for img_info in all_list:
         sem.acquire()
-        thread = threading.Thread(target=insert_img_info, args=(img_info,))
-        thread.start()
-        threads.append(thread)
+        img_id = img_info['img_id']
+        if img_id not in img_ids:
+            img_ids.append(img_id)
+            thread = threading.Thread(target=insert_img_info, args=(img_info,))
+            thread.start()
+            threads.append(thread)
     for thread in threads:
         thread.join()
     get_list(path)
