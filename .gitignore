@@ -1,3 +1,4 @@
 *.db
 images/
 __pycache__/
+images.zip
